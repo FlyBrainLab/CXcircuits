@@ -1,0 +1,8 @@
+FB/(3,L4)/s-FB/(3,R1)/b
+FB/(3,L3)/s-FB/(3,R2)/b
+FB/(3,L2)/s-FB/(3,R3)/b
+FB/(3,L1)/s-FB/(3,R4)/b
+FB/(3,R4)/s-FB/(3,L1)/b
+FB/(3,R3)/s-FB/(3,L2)/b
+FB/(3,R2)/s-FB/(3,L3)/b
+FB/(3,R1)/s-FB/(3,L4)/b

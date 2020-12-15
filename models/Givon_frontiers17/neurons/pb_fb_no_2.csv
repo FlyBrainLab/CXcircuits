@@ -1,0 +1,16 @@
+PB/L2/s-FB/(1,R4)/b-NO/(3,RM)/b
+PB/L3/s-FB/(1,R4)/b-NO/(3,RM)/b
+PB/L4/s-FB/(1,R3)/b-NO/(3,RM)/b
+PB/L5/s-FB/(1,R2)/b-NO/(3,RM)/b
+PB/L6/s-FB/(1,R1)|(1,L1)/b-NO/(3,RM)/b
+PB/L7/s-FB/(1,L2)/b-NO/(3,RM)/b
+PB/L8/s-FB/(1,L3)/b-NO/(3,RM)/b
+PB/L9/s-FB/(1,L4)/b-NO/(3,RM)/b
+PB/R2/s-FB/(1,L4)/b-no/(3,LM)/b
+PB/R3/s-FB/(1,L4)/b-no/(3,LM)/b
+PB/R4/s-FB/(1,L3)/b-no/(3,LM)/b
+PB/R5/s-FB/(1,L2)/b-no/(3,LM)/b
+PB/R6/s-FB/(1,L1)|(1,R1)/b-no/(3,LM)/b
+PB/R7/s-FB/(1,R2)/b-no/(3,LM)/b
+PB/R8/s-FB/(1,R3)/b-no/(3,LM)/b
+PB/R9/s-FB/(1,R4)/b-no/(3,LM)/b
