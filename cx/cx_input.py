@@ -639,7 +639,7 @@ class moving_bar_test(CX_Video):
             for i in range(steps):
                 pos = Gpos[i]
                 screen[i, (np.arange(pos-10,pos+10, dtype = np.int32)+180)%360] += Gweight[i]
-        self.screen = np.minimum(screen, 1)[:,::-1]
+        self.screen = np.minimum(screen, 1)[:,::-1].copy()
         # with h5py.File('screen_1.h5', 'r') as f:
         #     # f.create_dataset('/data', data=self.screen)
         #     self.screen = f['data'][:][:,::-1]
