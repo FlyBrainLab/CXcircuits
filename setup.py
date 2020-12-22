@@ -14,7 +14,7 @@ from distutils.command.install_headers import install_headers
 from setuptools import find_packages
 from setuptools import setup
 
-NAME =               'cx'
+NAME =               'cxcircuits'
 VERSION =            '0.1'
 AUTHOR =             'Yiyin Zhou'
 AUTHOR_EMAIL =       'yiyin@ee.columbia.edu'

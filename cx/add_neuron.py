@@ -4,7 +4,7 @@ from .parse_arborization import NeuronArborizationParser
 
 folder = os.path.dirname(os.path.abspath(__file__))
 
-def get_subregion_loc(svg = "{}/img/cx.svg".format(folder)):
+def get_subregion_loc(svg = "{}/../img/cx.svg".format(folder)):
 	subregion_to_location = {}
 	subregion_translation = {'PB':(698.03863,215.29411),
 							'EB':(390.00293,232.57211),
@@ -143,8 +143,8 @@ def tmp_neuron(loc_to_connect, parsed_list, presynaptic, postsynaptic):
     tmp_str = tmp_str + '</g>'
     return tmp_str
 
-def generate_svg(neurons, fin='{}/img/cx.svg'.format(folder),
-                 fout='{}/img/cx_tmp.svg'.format(folder)):
+def generate_svg(neurons, fin='{}/../img/cx.svg'.format(folder),
+                 fout='{}/../img/cx_tmp.svg'.format(folder)):
     parser = NeuronArborizationParser()
     tmp_strs = []
     for neuron in neurons:

@@ -8,7 +8,7 @@ import logging
 
 import path
 
-from cx.parse_arborization import NeuronArborizationParser
+from cxcircuits.parse_arborization import NeuronArborizationParser
 
 import numpy as np
 import numpy as np

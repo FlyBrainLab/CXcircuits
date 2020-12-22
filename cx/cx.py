@@ -284,7 +284,7 @@ class CX_Constructor(object):
 
     def _load_svg(self):
         dir_path = os.path.dirname(os.path.realpath(__file__))
-        filename = os.path.join(dir_path, '..' 'models',
+        filename = os.path.join(dir_path, '..', 'models',
                                 '{}'.format(self.initial_model_version),
                                 'diagram.svg')
 
