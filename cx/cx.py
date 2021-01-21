@@ -519,11 +519,10 @@ class CX_Constructor(object):
         time.sleep(5)
 
     def colorByUname(self, unames, color):
-        _data = {}
         _ids = []
         for _u in unames:
-            if _u in self.rid:
-                _ids.append(self.larva_rid_map[_u])
+            if _u in self.rid_dict['Neuron']:
+                _ids.append(self.rid_dict['Neuron'][_u])
 
         a = {'data': {'commands': {'setcolor': [_ids, color]}},
                                  'messageType': 'Command',
