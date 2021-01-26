@@ -144,14 +144,11 @@ class Query(object):
         """
         make querying a little easy to do by just specifying the query_list
         """
-        inp = {"query": query_list,
-               "format": format,
-               "user": self.fbl.client._async_session._session_id,
-               "server": self.fbl.naServerID
-               }
-        res = self.fbl.client.session.call('ffbo.processor.neuroarch_query',
-                                           inp)
-        data = res['success']['result']['data']
+        task = {"query": query_list,
+                "format": format,
+                }
+        res = self.fbl.executeNAquery(task)
+        data = res.graph
         return data
 
 
@@ -279,7 +276,7 @@ class CX_Constructor(object):
                  "object":{"class":"LPU"}},
                 ]
         data = self.querier.na_query(query_list)
-        return list(set([v['name'] for k,v in data['nodes'].items() \
+        return list(set([v['name'] for k,v in data.nodes(data = True) \
                          if v.get('version', None) == self.initial_model_version]))
 
     def _load_svg(self):
@@ -425,9 +422,9 @@ class CX_Constructor(object):
               ]
         data3 = self.querier.na_query(query_list)
 
-        self.data = nx.compose_all([nx_data_to_graph(data1),
-                                    nx_data_to_graph(data2),
-                                    nx_data_to_graph(data3)])
+        self.data = nx.compose_all([data1,
+                                    data2,
+                                    data3])
 
     def _organize_rid_dict(self):
         """
@@ -790,7 +787,7 @@ class CX_Constructor(object):
                 {"action": {"method":{"traverse_owns":{}}},
                  "object":{"memory":0}}
               ]
-        self.querier.na_query(query_list, format = 'no_result')
+        self.querier.na_query(query_list)
 
         if len(disabled_neurons):
             query_list = [{"action":{"method":{"has":{"name": disabled_neurons}}},"object":{"state":0}},
@@ -815,8 +812,11 @@ class CX_Constructor(object):
                     [{"action":{"method":{"has":{"name": disabled_synapses}}},"object":{"state":0}},
                     {"action":{"op":{"__sub__":{"memory":0}}},"object":{"state":0}}])
 
-        res = self.querier.na_query(query_list)
-        return res
+        if len(query_list):
+            res = self.querier.na_query(query_list)
+            return res
+        else:
+            return {}
 
     ## End of Removing Components
 
